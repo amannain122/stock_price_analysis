@@ -1,5 +1,5 @@
 ## Stock Price Analysis
-This project will focus on analyzing historical stock price data from Yahoo Finance to identify trends, patterns, and make price predictions of stock prices of the S&P 500 index, helping in future investment decisions.
+This project focuses on analyzing historical stock price data from Yahoo Finance to identify trends, patterns, and make price predictions of stock prices of the S&P 500 index, helping in future investment decisions.
 
 
 ## Project Overview
