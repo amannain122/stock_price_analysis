@@ -1,18 +1,26 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+import os
 
 # Initialize Flask app
 app = Flask(__name__)
 
+# Check if the app is running inside a Docker container
+if os.path.exists('/app/models'):
+    # If inside Docker, use the Docker container path
+    model_path = '/app/models/'
+else:
+    # If running locally, use the local path
+    model_path = './models/'
 
 # Load the trained models (update the path to match Docker's file structure)
-lr_model = joblib.load('/models/linear_regression_model.pkl')
-rf_model = joblib.load('/models/random_forest_model.pkl')
-ridge_model = joblib.load('/models/ridge_regression_model.pkl')
-lasso_model = joblib.load('/models/lasso_regression_model.pkl')
-xgb_model = joblib.load('/models/xgboost_model.pkl')
-# stacked_model = joblib.load('/models/stacked_model.pkl')
+rf_model = joblib.load(os.path.join(model_path, 'random_forest_model.pkl'))
+lr_model = joblib.load(os.path.join(model_path, 'linear_regression_model.pkl'))
+ridge_model = joblib.load(os.path.join(model_path, 'ridge_regression_model.pkl'))
+lasso_model = joblib.load(os.path.join(model_path, 'lasso_regression_model.pkl'))
+xgb_model = joblib.load(os.path.join(model_path, 'xgboost_model.pkl'))
+stacked_model = joblib.load(os.path.join(model_path,'stacked_model.pkl'))
 
 
 # Default route to test the server
