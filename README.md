@@ -6,7 +6,7 @@ This project will focus on analyzing historical stock price data from Yahoo Fina
 - **Data Source**: [Yahoo Finance](https://finance.yahoo.com) 
 
 ## Project Structure
-stock-price-analysis/
+'''stock-price-analysis/
 ├── README.md              # Project documentation
 ├── data/                  # Raw and processed data files (optional to include, if sample data is small)
 ├── notebooks/             # Jupyter notebooks for EDA and analysis
@@ -15,7 +15,7 @@ stock-price-analysis/
 ├── Dockerfile             # Docker setup for easy deployment
 ├── requirements.txt       # List of dependencies
 └── .gitignore             # Exclude unnecessary files from version control
-
+'''
 
 **Clone the repository**:
    ```bash
