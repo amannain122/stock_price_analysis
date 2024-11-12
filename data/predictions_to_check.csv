@@ -1,0 +1,2 @@
+Date,Linear_Regression_Prediction,Random_Forest_Prediction,Stacked_Model_Prediction,XGBoost_Prediction,Ridge_Regression_Prediction,Lasso_Regression_Prediction
+2024-11-12,6012.195817026653,5992.201447753906,5988.458534404921,5698.06,6012.195827680941,6011.066328185466
