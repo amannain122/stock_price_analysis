@@ -6,12 +6,18 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the trained models 
-rf_model = joblib.load('models/random_forest_model.pkl')
-lr_model = joblib.load('models/linear_regression_model.pkl')
-ridge_model = joblib.load('models/ridge_regression_model.pkl')
-lasso_model = joblib.load('models/lasso_regression_model.pkl')
-xgb_model = joblib.load('models/xgboost_model.pkl')
-stacked_model = joblib.load('models/stacked_model.pkl')
+lr_model = joblib.load('D:/stock_price_analysis/models/linear_regression_model.pkl')
+rf_model = joblib.load('D:/stock_price_analysis/models/random_forest_model.pkl')
+ridge_model = joblib.load('D:/stock_price_analysis/models/ridge_regression_model.pkl')
+lasso_model = joblib.load('D:/stock_price_analysis/models/lasso_regression_model.pkl')
+xgb_model = joblib.load('D:/stock_price_analysis/models/xgboost_model.pkl')
+# stacked_model = joblib.load('D:/stock_price_analysis/models/stacked_model.pkl')
+
+
+# Default route to test the server
+@app.route('/')
+def home():
+    return "Welcome to the Flask app! Use the /predict endpoint for predictions."
 
 # Define the prediction route
 @app.route('/predict', methods=['POST'])
@@ -27,16 +33,16 @@ def predict():
     ridge_pred = ridge_model.predict(features)
     lasso_pred = lasso_model.predict(features)
     xgb_pred = xgb_model.predict(features)
-    stacked_pred = stacked_model.predict(features)
+    # stacked_pred = stacked_model.predict(features)
 
     # Create a response with predictions
     response = {
-        'Random_Forest_Prediction': rf_pred[0],
-        'Linear_Regression_Prediction': lr_pred[0],
-        'Ridge_Regression_Prediction': ridge_pred[0],
-        'Lasso_Regression_Prediction': lasso_pred[0],
-        'XGBoost_Prediction': xgb_pred[0],
-        'Stacked_Model_Prediction': stacked_pred[0]
+        'Random_Forest_Prediction': float(rf_pred[0]),
+        'Linear_Regression_Prediction': float(lr_pred[0]),
+        'Ridge_Regression_Prediction': float(ridge_pred[0]),
+        'Lasso_Regression_Prediction': float(lasso_pred[0]),
+        'XGBoost_Prediction': float(xgb_pred[0]),
+        # 'Stacked_Model_Prediction': float(stacked_pred[0])
     }
 
     # Return the predictions as JSON response
