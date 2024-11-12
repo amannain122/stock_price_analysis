@@ -1,0 +1,44 @@
+# Ignore Dockerfile itself (optional, but might be useful)
+Dockerfile
+
+# Ignore any environment folders
+*.env
+.env
+.venv
+.myenv
+.myenv/
+myenv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignore Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE/editor specific files and folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore Git specific files and folders
+.git/
+.gitignore
+
+# Ignore Node modules (if you use Node.js or NPM)
+node_modules/
+
+# Ignore data directory (if it's large or not necessary to copy)
+data/
+
+# Ignore logs
+*.log
+
+# Ignore virtual environments
+venv/
+

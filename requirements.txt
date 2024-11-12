@@ -16,6 +16,7 @@ executing==2.1.0
 Flask==3.0.3
 fonttools==4.54.1
 frozendict==2.4.6
+gunicorn==23.0.0
 holidays==0.60
 html5lib==1.1
 idna==3.10
@@ -52,8 +53,8 @@ Pygments==2.18.0
 pyparsing==3.2.0
 python-dateutil==2.9.0.post0
 pytz==2024.2
-pywin32==308
 pyzmq==26.2.0
+pywin32==308; sys_platform == 'win32'
 requests==2.32.3
 scikit-learn==1.5.2
 scipy==1.14.1

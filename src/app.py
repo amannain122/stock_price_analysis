@@ -5,13 +5,14 @@ import numpy as np
 # Initialize Flask app
 app = Flask(__name__)
 
-# Load the trained models 
-lr_model = joblib.load('D:/stock_price_analysis/models/linear_regression_model.pkl')
-rf_model = joblib.load('D:/stock_price_analysis/models/random_forest_model.pkl')
-ridge_model = joblib.load('D:/stock_price_analysis/models/ridge_regression_model.pkl')
-lasso_model = joblib.load('D:/stock_price_analysis/models/lasso_regression_model.pkl')
-xgb_model = joblib.load('D:/stock_price_analysis/models/xgboost_model.pkl')
-# stacked_model = joblib.load('D:/stock_price_analysis/models/stacked_model.pkl')
+
+# Load the trained models (update the path to match Docker's file structure)
+lr_model = joblib.load('/models/linear_regression_model.pkl')
+rf_model = joblib.load('/models/random_forest_model.pkl')
+ridge_model = joblib.load('/models/ridge_regression_model.pkl')
+lasso_model = joblib.load('/models/lasso_regression_model.pkl')
+xgb_model = joblib.load('/models/xgboost_model.pkl')
+# stacked_model = joblib.load('/models/stacked_model.pkl')
 
 
 # Default route to test the server
